@@ -1,0 +1,31 @@
+{
+  "name": "balloonpopper",
+  "version": "1.0.0",
+  "description": "Pop as many balloons as possible without popping the bombs.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack --config webpack.config.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wendy-wm-wu/BalloonPopper.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wendy-wm-wu/BalloonPopper/issues"
+  },
+  "homepage": "https://github.com/wendy-wm-wu/BalloonPopper#readme",
+  "dependencies": {
+    "animate.css": "^3.7.2",
+    "createjs-easeljs": "^0.8.2"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.8.4",
+    "@babel/preset-env": "^7.8.4",
+    "babel-loader": "^8.0.6",
+    "webpack": "^4.41.6",
+    "webpack-cli": "^3.3.11"
+  }
+}
