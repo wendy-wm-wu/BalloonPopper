@@ -21,7 +21,6 @@ class Game {
       console.log(numBalloons[i]); 
     }
   };
-
 }
 
 export default Game; 
