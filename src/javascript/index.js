@@ -1,6 +1,7 @@
 import Game from './game';
 import Pause from './pause';
 import { restart, start, resize, corgiTagPercentage, breadTagPercentage } from './text';
+import registerListeners from './modal';
 
 document.addEventListener('DOMContentLoaded', () => {
   window.stage = stage; 
@@ -24,4 +25,5 @@ document.addEventListener('DOMContentLoaded', () => {
     restart.text = "(Click anywhere to restart)";
     game.start(61000);
   });
+  registerListeners(pause); 
 }); 
