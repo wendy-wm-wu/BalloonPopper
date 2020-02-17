@@ -12,8 +12,11 @@ class Game {
     this.stats = new Stats(stage);
     this.currentBTickers = {};
     this.started = false; 
+
+    this.start = this.start.bind(this); 
+    this.generateCorgis = this.generateCorgis.bind(this);
   }
-  start = time => {
+  start(time) {
     this.started = true;
     this.beginGame = setInterval(this.generateCorgis, 2000); 
     this.timer.start(); 
@@ -23,11 +26,11 @@ class Game {
     })
   };
 
-  end = () => {
+  end() {
 
   };
 
-  generateCorgis = () => {
+  generateCorgis() {
     const numCorgis = (Math.random() * 3) + 1; 
     for (let i = 0; i < numCorgis.length; i++) {
        const c = new Projectile(this.canvas, this.stage, this.score, this.stats, this.currentBTickers); 
@@ -35,11 +38,11 @@ class Game {
     }
   };
 
-  pause = () => {
+  pause() {
 
   };
 
-  unpause = () => {
+  unpause() {
 
   };
 }

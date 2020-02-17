@@ -1,3 +1,5 @@
+import { yikes, beCareful } from './text';
+
 const corgiImages = {
   0: '../images/corgi.png',
   1: '../images/corgi1.png',
@@ -22,15 +24,22 @@ class Corgi {
 
     const dirs = [1, -1];
     this.direction = dirs[Math.floor(Math.random() * 2)]; 
+
+    this.generateCorgi = this.generateCorgi.bind(this);
+    this.addListener = this.addListener.bind(this);
+    this.corgiReaction = this.corgiReaction.bind(this);
+    this.tagCorgi = this.tagCorgi.bind(this);
+    this.dropCandy = this.dropCandy.bind(this);
+    this.deleteCorgi = this.deleteCorgi.bind(this);
   }
 
-  generateCorgi = interval => {
+  generateCorgi(interval) {
     const randomKey = Math.floor(Math.random() * 5);  
     const corgi = new createjs.Bitmap(corgiImages[randomKey])
 
     if (randomKey === 3 || randomKey === 4) {
       corgi.type = "bomb";
-      this.stats.increaseTotalBombs();
+      this.stats.increaseTotalBread();
     } else {
       corgi.type = "corgi";
       this.stats.increaseTotalCorgis(); 
@@ -48,7 +57,7 @@ class Corgi {
     return corgi; 
   };
 
-  addListener = (corgi, interval) => {
+  addListener(corgi, interval) {
     corgi.addEventListener('mouseover', () => {
       const type = corgi.type; 
       
@@ -58,7 +67,7 @@ class Corgi {
     });
   };
   
-  corgiReaction = (corgi, type) => {
+  corgiReaction(corgi, type) {
     this.score.updateScore(type);
 
     if (type === "corgi") {
@@ -66,13 +75,13 @@ class Corgi {
       this.dropCandy(corgi);
       this.stats.increaseTagCorgis();
     } else if (type === "bomb") {
-      this.stats.increaseHitBombs();
-      //warning sign to be careful
-      //setinterval to show warning sign 
+      this.stats.increaseTagBread();
+      this.stage.addChild(yikes, beCareful);
+      setTimeout(() => this.stage.removeChild(yikes, beCareful), 1500); 
     }
   };
   
-  tagCorgi = corgi => {
+  tagCorgi(corgi) {
     const candy = new createjs.Bitmap('../images/happy_corgi.png');
     candy.x = corgi.x;
     candy.y = corgi.y; 
@@ -80,7 +89,7 @@ class Corgi {
     setTimeout(() => this.stage.removeChild(candy), 750); 
   };
   
-  dropCandy = corgi => {
+  dropCandy(corgi) {
     const randomKey = Math.floor(Math.random() * 4);
     const droppedCandy = new createjs.Bitmap(candyImages[randomKey]); 
     droppedCandy.x = corgi.x; 
@@ -88,7 +97,7 @@ class Corgi {
     this.stage.addChild(droppedCandy); 
   };
   
-  deleteCorgi = (corgi, interval) => {
+  deleteCorgi(corgi, interval) {
     this.stage.removeChild(corgi); 
     clearInterval(interval); 
   };

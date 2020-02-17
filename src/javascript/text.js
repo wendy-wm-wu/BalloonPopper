@@ -11,7 +11,7 @@ restart.y = 480;
 export const start = new createjs.Text("Welcome to Corgi Tag!", "bold 35px Gloria Hallelujah", "#000000");start.y = 270; 
 
 export const corgiTagPercentage = new createjs.Text("Tag as many corgis as you can", "bold 35px Gloria Hallelujah", "#000000"); 
-corgiHitPercentage.y = 350;
+corgiTagPercentage.y = 350;
 
 export const breadTagPercentage = new createjs.Text("but don't tag any bread!", "bold 35px Gloria Hallelujah", "#000000");
 breadTagPercentage.y = 400;

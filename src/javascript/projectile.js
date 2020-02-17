@@ -12,19 +12,23 @@ class Projectile {
     this.corgi = this.CorgiClass.generateCorgi(this.interval);
     this.xDirection = this.corgi.x > this.canvas.width / 2 ? -1 : 1; 
     this.setVelocity(); 
-
     this.stage.addChild(this.corgi);  
+
+    this.setVelocity = this.setVelocity.bind(this); 
+    this.setMotion = this.setMotion.bind(this);
+    this.tick = this.tick.bind(this);
+    this.delete = this.delete.bind(this);
   }
-  setVelocity = () => {
+  setVelocity() {
     this.x_velocity = Math.random() * 12 * this.xDirection;
     this.y_velocity = (Math.random() * 10) + 33; 
   };
 
-  setMotion = () => {
+  setMotion() {
     this.interval = setInterval(this.tick, 25); 
   };
 
-  tick = () => {
+  tick() {
     this.time += 25; 
     const corgi = this.corgi; 
     const time = this.time/ 1000; 
@@ -39,7 +43,7 @@ class Projectile {
     this.stage.update(); 
   };
 
-  delete = () => {
+  delete() {
     this.CorgiClass.deleteCorgi(this.corgi, this.interval);
     const keys = Object.keys(this.currentBTickers); 
     this.currentBTickers = keys.filter(el => el !== this.interval); 

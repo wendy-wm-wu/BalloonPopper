@@ -6,8 +6,12 @@ class Timer {
     this.time.x = 840;
     this.time.y = 670;
     this.stage.addChild(this.time); 
+
+    this.start = this.start.bind(this);
+    this.pause = this.pause.bind(this);
+    this.reset = this.reset.bind(this);
   }
-  start = () => {
+  start() {
     this.timer = setInterval(() => {
       this.timeLeft -= 1;
       this.time.text = this.timeLeft; 
@@ -16,11 +20,11 @@ class Timer {
     }, 1000);
   };
 
-  pause = () => {
+  pause() {
     clearInterval(this.timer);
   };
 
-  reset = () => {
+  reset() {
     clearInterval(this.timer);
     this.timeLeft = 60;
     this.time.text = this.timeLeft;

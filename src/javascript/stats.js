@@ -5,33 +5,41 @@ class Stats {
     this.tagCorgis = 0;
     this.totalBread = 0;
     this.tagBread = 0; 
+
+    this.increaseTotalCorgis = this.increaseTotalCorgis.bind(this);
+    this.increaseTagCorgis = this.increaseTagCorgis.bind(this);
+    this.increaseTotalBread = this.increaseTotalBread.bind(this);
+    this.increaseTagBread = this.increaseTagBread.bind(this);
+    this.corgiTagPercentage = this.corgiTagPercentage.bind(this);
+    this.breadTagPercentage = this.breadTagPercentage.bind(this);
+    this.reset = this.reset.bind(this); 
   }
 
-  increaseTotalCorgis = () => {
+  increaseTotalCorgis() {
     this.totalCorgis += 1; 
   };
 
-  increaseTagCorgis = () => {
+  increaseTagCorgis() {
     this.tagCorgis += 1; 
   };
 
-  increaseTotalBread = () => {
+  increaseTotalBread() {
     this.totalBread += 1; 
   };
 
-  increaseTagBread = () => {
+  increaseTagBread() {
     this.tagBread += 1; 
   };
 
-  corgiTagPercentage = () => {
+  corgiTagPercentage() {
     return Math.round(this.tagCorgis/ this.totalCorgis) * 100; 
   };
 
-  breadTagPercentage = () => {
+  breadTagPercentage() {
     return Math.round(this.tagBread/ this.totalBread) * 100; 
   };
 
-  reset = () => {
+  reset() {
     this.totalCorgis = 0;
     this.tagCorgis = 0;
     this.totalBread = 0;
