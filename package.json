@@ -1,7 +1,7 @@
 {
-  "name": "balloonpopper",
+  "name": "corgitag",
   "version": "1.0.0",
-  "description": "Pop as many balloons as possible without popping the bombs.",
+  "description": "Tag as many corgis as possible without popping the bombs.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",

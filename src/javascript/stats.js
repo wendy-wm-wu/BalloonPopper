@@ -1,18 +1,18 @@
 class Stats {
   constructor(stage) {
     this.stage = stage;
-    this.totalBalloons = 0;
-    this.hitBalloons = 0;
+    this.totalCorgis = 0;
+    this.tagCorgis = 0;
     this.totalBombs = 0;
-    this.hitBombs = 0; 
+    this.tagBombs = 0; 
   }
 
-  increaseTotalBalloons = () => {
-    this.totalBalloons += 1; 
+  increaseTotalCorgis = () => {
+    this.totalCorgis += 1; 
   };
 
-  increaseHitBalloons = () => {
-    this.hitBalloons += 1; 
+  increaseTagCorgis = () => {
+    this.tagCorgis += 1; 
   };
 
   increaseTotalBombs = () => {
@@ -23,17 +23,17 @@ class Stats {
     this.hitBombs += 1; 
   };
 
-  balloonHitPercentage = () => {
-    return Math.round(this.hitBalloons/ this.totalBalloons) * 100; 
+  corgiTagPercentage = () => {
+    return Math.round(this.tagCorgis/ this.totalCorgis) * 100; 
   };
 
-  bombHitPercentage = () => {
+  bombTagPercentage = () => {
     return Math.round(this.hitBombs/ this.totalBombs) * 100; 
   };
 
   reset = () => {
-    this.totalBalloons = 0;
-    this.hitBalloons = 0;
+    this.totalCorgis = 0;
+    this.tagCorgis = 0;
     this.totalBombs = 0;
     this.hitBombs = 0; 
   };
