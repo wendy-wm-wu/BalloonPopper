@@ -1,4 +1,4 @@
-html, body, h1 {
+html, body, h1, ul, li, a, h1 {
   margin: 0px;
   padding: 0px;
   border: 0px;
@@ -20,6 +20,12 @@ body {
   margin: auto;
   font-family: Gloria Hallelujah;
   font-size: 20px;
+}
+
+h1 {
+  font-weight: bold;
+  font-size: 35px;
+  text-decoration: underline;
 }
 
 section {

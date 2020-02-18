@@ -32,11 +32,11 @@ class Stats {
   };
 
   corgiTagPercentage() {
-    return Math.round(this.tagCorgis/ this.totalCorgis) * 100; 
+    return Math.round(this.tagCorgis / this.totalCorgis * 10000) / 100; 
   };
 
   breadTagPercentage() {
-    return Math.round(this.tagBread/ this.totalBread) * 100; 
+    return Math.round(this.tagBread / this.totalBread * 10000) / 100; 
   };
 
   reset() {

@@ -1,11 +1,8 @@
 const registerListeners = (pause) => {
   const modal = document.getElementById('modal');
-  const playBtn = document.getElementById('playBtn');
-
-  playBtn.onclick = () => {
-    modal.style.display = "none";
-    pause.unpauseGame(); 
-  }
+  const instructions = document.getElementById('instructions'); 
+  const instrBtn = document.getElementById('instrBtn');
+  const close = document.getElementById('close');
 
   window.onclick = (event) => {
     if (event.target === modal) {
@@ -17,6 +14,26 @@ const registerListeners = (pause) => {
       }
     }
   }
+
+  // instrBtn.onclick = () => {
+  //   modal.style.display = "flex";
+  //   instructions.style.display = "block";
+    
+  //   if (pause.game.started) {
+  //     pause.pauseGame(); 
+  //   }
+  // }
+
+  // close.onclick = () => {
+  //   if (!pause.paused) {
+  //     modal.style.display = "none"; 
+  //   }
+  //   if (pause.game.started) {
+  //     pause.unpauseGame(); 
+  //   }
+  //   instructions.style.display = "none";  
+  // }
+
 }
 
 export default registerListeners; 

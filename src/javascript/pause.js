@@ -13,6 +13,8 @@ class Pause {
     this.addClick = this.addClick.bind(this);
     this.pauseGame = this.pauseGame.bind(this);
     this.unpauseGame = this.unpauseGame.bind(this);
+    this.addClick(this.play);
+    this.addClick(this.pause); 
   }
   addClick(button) {
     button.addEventListener('click', () => {
@@ -30,7 +32,8 @@ class Pause {
     this.paused = true;
     this.game.pause(); 
     document.getElementById('modal').style.display = "flex"; 
-    document.getElementById('playBtn').style.display = "block";
+    // document.getElementById('playBtn').style.display = "block";
+    this.stage.addChild(this.play);
   };
 
   unpauseGame() {
