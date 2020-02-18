@@ -7,7 +7,7 @@ class Score {
     this.score = 0;
     this.scoreText = new createjs.Text(`Score: ${this.score}`, 'bold 45px Hallelujah', '#000000');
     this.scoreText.y = 15; 
-    this.stage.addChild(this.scoreText); 
+    stage.addChild(this.scoreText); 
 
     this.fixWidth = this.fixWidth.bind(this);
     this.updateScore = this.updateScore.bind(this);

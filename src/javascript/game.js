@@ -23,7 +23,7 @@ class Game {
 
   generateCorgis() {
     const numCorgis = (Math.random() * 3) + 1; 
-    for (let i = 0; i < numCorgis.length; i++) {
+    for (let i = 0; i < numCorgis; i++) {
        const c = new Projectile(this.canvas, this.stage, this.score, this.stats, this.currentBTickers); 
        this.currentBTickers[c.interval] = c; 
     }
@@ -33,6 +33,8 @@ class Game {
     this.started = true;
     this.beginGame = setInterval(this.generateCorgis, 2000); 
     this.timer.start(); 
+    this.stage.addChild(pause);
+    this.stage.update();
     
     this.endTimer = setTimeout(() => {
       start.text = `Game over! Your score was ${this.score.score}`; 

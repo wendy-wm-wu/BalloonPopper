@@ -5,19 +5,22 @@ class Projectile {
     this.canvas = canvas;
     this.stage = stage;
     this.currentBTickers = currentBTickers; 
-    this.time = 0; 
-    this.setMotion(); 
-
-    this.CorgiClass = new Corgi(canvas, stage, score, stats);
-    this.corgi = this.CorgiClass.generateCorgi(this.interval);
-    this.xDirection = this.corgi.x > this.canvas.width / 2 ? -1 : 1; 
-    this.setVelocity(); 
-    this.stage.addChild(this.corgi);  
 
     this.setVelocity = this.setVelocity.bind(this); 
     this.setMotion = this.setMotion.bind(this);
     this.tick = this.tick.bind(this);
     this.delete = this.delete.bind(this);
+
+    this.setMotion(); 
+    this.time = 0; 
+
+    this.CorgiClass = new Corgi(canvas, stage, score, stats);
+    this.corgi = this.CorgiClass.generateCorgi(this.interval);
+    console.log('projectile', this.corgi);
+    this.xDirection = this.corgi.x > canvas.width / 2 ? -1 : 1; 
+    this.setVelocity(); 
+    stage.addChild(this.corgi);  
+
   }
   setVelocity() {
     this.x_velocity = Math.random() * 12 * this.xDirection;
@@ -31,7 +34,7 @@ class Projectile {
   tick() {
     this.time += 25; 
     const corgi = this.corgi; 
-    const time = this.time/ 1000; 
+    const time = (this.time) / 1000; 
 
     corgi.x = corgi.x + this.x_velocity; 
     corgi.y = corgi.y - (time * (this.y_velocity - (30 * time))); 

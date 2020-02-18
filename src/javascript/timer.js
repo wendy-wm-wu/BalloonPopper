@@ -5,7 +5,7 @@ class Timer {
     this.time = new createjs.Text('60', 'bold 35px Gloria Hallelujah', '#000000');
     this.time.x = 840;
     this.time.y = 670;
-    this.stage.addChild(this.time); 
+    stage.addChild(this.time); 
 
     this.start = this.start.bind(this);
     this.pause = this.pause.bind(this);

@@ -23,11 +23,11 @@ export const beCareful = new createjs.Text("Be careful!", "bold 40px Gloria Hall
 
 resize(yikes, beCareful); 
 
-export const pause = new createjs.Bitmap("../images/pause.png"); 
+export const pause = new createjs.Bitmap("src/images/pause.png"); 
 pause.x = 15;
 pause.y = 675; 
 
-export const play = new createjs.Bitmap("../images/play.png");
+export const play = new createjs.Bitmap("src/images/play.png");
 play.x = 15;
 play.y = 675; 
 

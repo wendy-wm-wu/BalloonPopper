@@ -7,7 +7,7 @@ class Pause {
 
     this.pause = pause;
     this.play = play; 
-    this.game.stage.addChild(this.pause); 
+    game.stage.addChild(this.pause); 
 
     this.paused = false; 
     this.addClick = this.addClick.bind(this);

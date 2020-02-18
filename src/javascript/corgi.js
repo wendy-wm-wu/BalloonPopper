@@ -1,18 +1,18 @@
 import { yikes, beCareful } from './text';
 
 const corgiImages = {
-  0: '../images/corgi.png',
-  1: '../images/corgi1.png',
-  2: '../images/corgi2.png',
-  3: '../images/bread.png',
-  4: '../images/bread1.png',
+  0: "src/images/corgi.png",
+  1: "src/images/corgi1.png",
+  2: "src/images/corgi2.png",
+  3: "src/images/bread.png",
+  4: "src/images/bread1.png",
 }
 
 const candyImages = {
-  0: '../images/candy.png',
-  1: '../images/candy2.png',
-  2: '../images/candy3.png',
-  3: '../images/candy4.png',
+  0: "src/images/candy.png",
+  1: "src/images/candy2.png",
+  2: "src/images/candy3.png",
+  3: "src/images/candy4.png",
 }
 
 class Corgi {
@@ -35,7 +35,7 @@ class Corgi {
 
   generateCorgi(interval) {
     const randomKey = Math.floor(Math.random() * 5);  
-    const corgi = new createjs.Bitmap(corgiImages[randomKey])
+    const corgi = new createjs.Bitmap(corgiImages[randomKey]); //try with one corgi 
 
     if (randomKey === 3 || randomKey === 4) {
       corgi.type = "bomb";
@@ -46,7 +46,7 @@ class Corgi {
     }
 
     const tag = new createjs.Shape(); 
-    tag.beginFill('#000').drawRect(0, 20, 90, 70); 
+    tag.graphics.beginFill('#000').drawRect(0, 20, 90, 70); 
     corgi.hitArea = tag; 
 
     corgi.x = Math.round(Math.random() * this.canvas.width);
@@ -54,6 +54,7 @@ class Corgi {
     corgi.rotation = Math.random() * 360; 
     this.stage.addChild(this.corgi); 
     
+    this.addListener(corgi, interval);
     return corgi; 
   };
 
@@ -82,7 +83,7 @@ class Corgi {
   };
   
   tagCorgi(corgi) {
-    const candy = new createjs.Bitmap('../images/happy_corgi.png');
+    const candy = new createjs.Bitmap("src/images/happy_corgi.png");
     candy.x = corgi.x;
     candy.y = corgi.y; 
     this.stage.addChild(candy);
@@ -102,5 +103,6 @@ class Corgi {
     clearInterval(interval); 
   };
 }
+
 
 export default Corgi; 

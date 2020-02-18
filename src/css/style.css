@@ -1,3 +1,36 @@
-#canvas {
-  border: 2px solid black;
+html, body, h1 {
+  margin: 0px;
+  padding: 0px;
+  border: 0px;
+  outline: inherit;
+  font: inherit;
+  color: inherit;
+  text-align: inherit;
+  text-decoration: inherit;
+  vertical-align: inherit;
+  box-sizing: inherit;
+  background: transparent;
+}
+
+body {
+  box-sizing: border-box;
+  text-align: center;
+  background: rgba(231, 185, 199, 0.18);
+  color: #d3899d; //#e7b9c7;
+  margin: auto;
+  font-family: Gloria Hallelujah;
+  font-size: 20px;
+}
+
+section {
+  position: absolute;
+  width: 220px;
+  margin: 30px 0;
+  left: -250px;
+}
+
+div {
+  position: relative;
+  display: inline-block;
+  margin-top: 100px;
 }
