@@ -5,7 +5,7 @@ export const resize = (...texts) => {
   });
 };
 
-export const restart = new createjs.Text("(Click anywhere to start)", "bold 25px Gloria Hallelujah", "#000000");
+export const restart = new createjs.Text("(Click anywhere to start)", " bold 25px Gloria Hallelujah", "#000000");
 restart.y = 480; 
 
 export const start = new createjs.Text("Welcome to Corgi Tag!", "bold 35px Gloria Hallelujah", "#000000");start.y = 270; 

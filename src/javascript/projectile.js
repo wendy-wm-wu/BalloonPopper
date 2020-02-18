@@ -16,7 +16,6 @@ class Projectile {
 
     this.CorgiClass = new Corgi(canvas, stage, score, stats);
     this.corgi = this.CorgiClass.generateCorgi(this.interval);
-    console.log('projectile', this.corgi);
     this.xDirection = this.corgi.x > canvas.width / 2 ? -1 : 1; 
     this.setVelocity(); 
     stage.addChild(this.corgi);  
