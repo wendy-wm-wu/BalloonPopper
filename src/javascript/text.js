@@ -20,6 +20,7 @@ export const yikes = new createjs.Text("YIKES!", "bold 90px Gloria Hallelujah", 
 yikes.y = 270;
 
 export const beCareful = new createjs.Text("Be careful!", "bold 40px Gloria Hallelujah", "#000000"); 
+beCareful.y = 400;
 
 resize(yikes, beCareful); 
 
@@ -30,6 +31,11 @@ pause.y = 675;
 export const play = new createjs.Bitmap("src/images/play.png");
 play.x = 15;
 play.y = 675; 
+
+const phit = new createjs.Shape();
+phit.graphics.beginFill("#000").drawRect(0, 0, 53, 53);
+pause.hitArea = phit;
+play.hitArea = phit;
 
 export const endGameMessage = (stage, game, score, stats, time) => {
   setTimeout(() => {

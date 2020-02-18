@@ -46,7 +46,7 @@ class Corgi {
     }
 
     const tag = new createjs.Shape(); 
-    tag.graphics.beginFill('#000').drawRect(0, 20, 90, 70); 
+    tag.graphics.beginFill('#000').drawRect(0, 50, 90, 70); 
     corgi.hitArea = tag; 
 
     corgi.x = Math.round(Math.random() * this.canvas.width);
@@ -83,11 +83,11 @@ class Corgi {
   };
   
   tagCorgi(corgi) {
-    const candy = new createjs.Bitmap("src/images/happy_corgi.png");
-    candy.x = corgi.x;
-    candy.y = corgi.y; 
-    this.stage.addChild(candy);
-    setTimeout(() => this.stage.removeChild(candy), 750); 
+    const happyCorgi = new createjs.Bitmap("src/images/happy_corgi.png");
+    happyCorgi.x = corgi.x;
+    happyCorgi.y = corgi.y; 
+    this.stage.addChild(happyCorgi);
+    setTimeout(() => this.stage.removeChild(happyCorgi), 750); 
   };
   
   dropCandy(corgi) {

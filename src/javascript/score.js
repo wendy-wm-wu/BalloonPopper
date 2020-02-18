@@ -19,7 +19,7 @@ class Score {
   };
 
   updateScore(type) {
-    if (type === 'balloon') {
+    if (type === "corgi") {
       this.score += 10; 
     } else {
       this.score -= 50; 
