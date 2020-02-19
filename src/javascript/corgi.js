@@ -31,6 +31,7 @@ class Corgi {
     this.tagCorgi = this.tagCorgi.bind(this);
     this.dropCandy = this.dropCandy.bind(this);
     this.deleteCorgi = this.deleteCorgi.bind(this);
+    this.music = this.music.bind(this); 
   }
 
   generateCorgi(interval) {
@@ -61,12 +62,21 @@ class Corgi {
   addListener(corgi, interval) {
     corgi.addEventListener('mouseover', () => {
       const type = corgi.type; 
+      const sound = this.music(type); 
+      sound.currentTime = 0; 
+      sound.play(); 
       
       this.corgiReaction(corgi, type); 
       this.deleteCorgi(corgi, interval);
       this.stage.update();
     });
   };
+
+  music(type) {
+    const corgiSound = new Audio("src/sounds/dog_woof.mp3"); 
+    const breadSound = new Audio("src/sounds/funny_slip.mp3"); 
+    return type === "corgi" ? corgiSound : breadSound; 
+  }
   
   corgiReaction(corgi, type) {
     this.score.updateScore(type);
