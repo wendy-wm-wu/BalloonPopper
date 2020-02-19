@@ -1,4 +1,4 @@
-# Corgi Tag (In Progress)
+# Corgi Tag
 
 [Play Corgi Tag](https://wendy-wm-wu.github.io/Corgi_Tag/)
 
