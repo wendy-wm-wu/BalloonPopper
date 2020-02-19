@@ -1,6 +1,6 @@
 # Corgi Tag
 
-[Play Corgi Tag](https://github.com/wendy-wm-wu/Corgi_Tag.git)
+[Play Corgi Tag](https://wendy-wm-wu.github.io/Corgi_Tag/)
 
 
 Corgi Tag is an interactive corgi-tagging game with one objective: tag as many corgis as you can and stock up on candy. Inspired by Fruit Ninja, Corgi Tag is built using Javascript, HTML5 Canvas, and CreateJS libraries to create an interactive game with intuitive user controls, smooth animations, and fun sound effects.
